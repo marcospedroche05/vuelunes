@@ -5,7 +5,11 @@
     <input type="number" v-model="numero" />
     <button v-on:click="generarCollatz()">Generar conjetura</button>
     <ul>
-      <li v-for="num in numerosCollatz" :key="num">{{ num }}</li>
+      <li
+        v-for="num in numerosCollatz"
+        :key="num"
+        v-html="$filters.comprobarCollatz(num)"
+      ></li>
     </ul>
   </div>
 </template>
@@ -21,6 +25,7 @@ export default {
   },
   methods: {
     generarCollatz() {
+      this.numerosCollatz = [];
       var numero = this.numero;
       while (numero != 1) {
         if (numero % 2 == 0) {
