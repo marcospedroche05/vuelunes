@@ -13,6 +13,12 @@ app.config.globalProperties.$filters = {
     }
     return data;
   },
+  getResultado(numero, multiplicador) {
+    return numero * multiplicador;
+  },
+  getOperacion(numero, multiplicador) {
+    return numero + " * " + multiplicador;
+  },
 };
 
 app.use(router).mount("#app");
