@@ -2,7 +2,7 @@
   <div>
     <h1>Collatz</h1>
     <label>Introduce un número: </label>
-    <input type="number" v-model="numero" />
+    <input type="number" v-model="numero" min="1" />
     <button v-on:click="generarCollatz()">Generar conjetura</button>
     <ul>
       <li
@@ -19,7 +19,7 @@ export default {
   name: "CollatzComponent",
   data() {
     return {
-      numero: 0,
+      numero: 1,
       numerosCollatz: [],
     };
   },
